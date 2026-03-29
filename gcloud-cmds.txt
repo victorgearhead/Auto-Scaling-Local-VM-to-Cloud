@@ -1,0 +1,12 @@
+gcloud auth login --no-launch-browser
+
+gcloud compute instances create auto-scale-vm \
+--zone=us-central1-a \
+--machine-type=e2-medium \
+--image-family=debian-11 \
+--image-project=debian-cloud
+
+gcloud compute scp app.py auto-scale-vm:~/ --zone=us-central1-a
+
+gcloud compute firewall-rules create allow-8080 --allow tcp:8080
+
