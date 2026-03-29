@@ -18,9 +18,9 @@ This project demonstrates a hybrid cloud setup where a **local virtual machine m
 ```mermaid
 flowchart TD
 
-A[Local Machine Terminal] --> B[Local VM (VirtualBox)]
+A[Local Machine Terminal] --> B[Local VM]
 
-B --> C[monitor.py (psutil)]
+B --> C[monitor.py]
 C -->|CPU < 75%| C
 C -->|CPU > 75%| D[gcloud CLI Trigger]
 
